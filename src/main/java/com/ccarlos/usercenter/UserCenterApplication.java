@@ -3,7 +3,7 @@ package com.ccarlos.usercenter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tk.mybatis.spring.annotation.MapperScan;
-
+/** 用户中心启动类 */
 // 扫描mybatis哪些包里面的接口
 @MapperScan("com.ccarlos.usercenter.dao")
 @SpringBootApplication
