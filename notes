@@ -1,0 +1,4 @@
+1.Mysql命令
+use mysql;
+show tables;
+show create table user;

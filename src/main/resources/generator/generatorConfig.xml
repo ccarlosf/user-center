@@ -22,20 +22,20 @@
         </jdbcConnection>
 
         <!--实体-->
-        <javaModelGenerator targetPackage="com.ccarlos.usercenter.domain.entity"
+        <javaModelGenerator targetPackage="com.ccarlos.usercenter.domain.entity.${moduleName}"
                             targetProject="src/main/java"/>
 
         <!--mapper.xml-->
-        <sqlMapGenerator targetPackage="com.ccarlos.usercenter.dao"
+        <sqlMapGenerator targetPackage="com.ccarlos.usercenter.dao.${moduleName}"
                          targetProject="src/main/resources"/>
 
         <!--mapper接口-->
-        <javaClientGenerator targetPackage="com.ccarlos.usercenter.dao"
+        <javaClientGenerator targetPackage="com.ccarlos.usercenter.dao.${moduleName}"
                              targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <!--为哪张表生成代码-->
-        <table tableName="">
+        <table tableName="${tableName}">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
     </context>
