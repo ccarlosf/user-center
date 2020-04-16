@@ -2,16 +2,21 @@ package com.ccarlos.usercenter;
 
 import com.ccarlos.usercenter.dao.user.UserMapper;
 import com.ccarlos.usercenter.domain.entity.user.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TestController {
 
-    @Autowired
-    private  UserMapper userMapper;
+    /**
+     * // 作业1：课后研究一下@Resource和@Autowired的区别
+     * // 面试题
+     */
+    private final UserMapper userMapper;
 
     @GetMapping("/test")
     public User testInsert() {
