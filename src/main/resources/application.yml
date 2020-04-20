@@ -1,3 +1,5 @@
+server:
+  port: 3007
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/user_center
@@ -7,5 +9,11 @@ spring:
       # >= 6.x: com.mysql.cj.jdbc.Driver
       # <= 5.x: com.mysql.jdbc.Driver
       driver-class-name: com.mysql.cj.jdbc.Driver
-server:
-  port: 1007
+  cloud:
+    nacos:
+      # 指定nacos server的地址
+      discovery:
+        server-addr: localhost:8848
+  application:
+    # 服务名称尽量用-，不要用_，不要用特殊字符
+    name: user-center
