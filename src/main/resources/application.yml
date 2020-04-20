@@ -19,6 +19,10 @@ spring:
        # NJ
        # 指定集群名称
        # cluster-name: NJ
+        metadata:
+         instance: c
+         haha: hehe
+         version: v1
   application:
     # 服务名称尽量用-，不要用_，不要用特殊字符
     name: user-center
