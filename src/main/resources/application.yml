@@ -1,5 +1,5 @@
 server:
-  port: 3007
+  port: 1007
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/user_center
@@ -14,6 +14,11 @@ spring:
       # 指定nacos server的地址
       discovery:
         server-addr: localhost:8848
+       # 指定namespace
+       # namespace: 3440c980-9fc9-455c-9858-9010b9daa703
+       # NJ
+       # 指定集群名称
+       # cluster-name: NJ
   application:
     # 服务名称尽量用-，不要用_，不要用特殊字符
     name: user-center
