@@ -23,4 +23,9 @@ public class UserController {
         return this.userService.findById(id);
     }
 
+    // q?id=1&wxId=aaa&...
+    @GetMapping("/q")
+    public User query(User user) {
+        return user;
+    }
 }
