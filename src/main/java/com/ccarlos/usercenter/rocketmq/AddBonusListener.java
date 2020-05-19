@@ -41,5 +41,7 @@ public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDTO> {
                         .description("投稿加积分..")
                         .build()
         );
+
+        log.info("积分添加完毕...");
     }
 }
