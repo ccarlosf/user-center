@@ -71,6 +71,13 @@
             <version>2.0.3</version>
         </dependency>
 
+        <!-- rocketmq-stream -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
