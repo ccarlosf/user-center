@@ -1,5 +1,6 @@
 package com.ccarlos.usercenter;
 
+import com.ccarlos.usercenter.rocketmq.MySink;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.messaging.Sink;
@@ -10,7 +11,7 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 // 扫描mybatis哪些包里面的接口
 @MapperScan("com.ccarlos.usercenter.dao")
 @SpringBootApplication
-@EnableBinding(Sink.class)
+@EnableBinding({Sink.class, MySink.class})
 public class UserCenterApplication {
 
     public static void main(String[] args) {
