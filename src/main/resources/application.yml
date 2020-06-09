@@ -29,20 +29,21 @@ spring:
           name-server: 127.0.0.1:9876
       bindings:
         input:
-          destination: stream-test-topic
+          # destination: stream-test-topic
+          destination: add-bonus
           # 如果用的是RocketMQ，一定要设置
           # 如果用的其他MQ，可留空
           group: binder-group
-        my-input:
-          destination: stream-my-topic
+        #my-input:
+        #  destination: stream-my-topic
           # 如果用的是RocketMQ，一定要设置
           # 如果用的其他MQ，可留空
-          group: my-group
+        #  group: my-group
   application:
     # 服务名称尽量用-，不要用_，不要用特殊字符
     name: user-center
-rocketmq:
-  name-server: 127.0.0.1:9876
+#rocketmq:
+#  name-server: 127.0.0.1:9876
 logging:
   level:
     com.alibaba.nacos: error

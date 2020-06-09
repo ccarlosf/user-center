@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
+/*
 @Service
 @RocketMQMessageListener(consumerGroup = "consumer-group", topic = "add-bonus")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -45,3 +46,4 @@ public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDTO> {
         log.info("积分添加完毕...");
     }
 }
+*/

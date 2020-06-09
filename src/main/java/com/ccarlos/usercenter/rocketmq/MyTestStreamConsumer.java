@@ -6,6 +6,7 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.support.ErrorMessage;
 import org.springframework.stereotype.Service;
 
+/*
 @Service
 @Slf4j
 public class MyTestStreamConsumer {
@@ -22,3 +23,4 @@ public class MyTestStreamConsumer {
         log.warn("发生异常，errorMessage：{}", errorMessage);
     }
 }
+*/
