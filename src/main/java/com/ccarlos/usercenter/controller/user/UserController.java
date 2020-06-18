@@ -1,14 +1,13 @@
 package com.ccarlos.usercenter.controller.user;
 
+import com.ccarlos.usercenter.domain.dto.user.LoginRespDTO;
+import com.ccarlos.usercenter.domain.dto.user.UserLoginDTO;
 import com.ccarlos.usercenter.domain.entity.user.User;
 import com.ccarlos.usercenter.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -27,5 +26,10 @@ public class UserController {
     @GetMapping("/q")
     public User query(User user) {
         return user;
+    }
+
+    @PostMapping("/login")
+    public LoginRespDTO login(@RequestBody UserLoginDTO loginDTO)  {
+
     }
 }
