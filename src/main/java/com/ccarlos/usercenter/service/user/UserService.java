@@ -3,6 +3,7 @@ package com.ccarlos.usercenter.service.user;
 import com.ccarlos.usercenter.dao.bonus.BonusEventLogMapper;
 import com.ccarlos.usercenter.dao.user.UserMapper;
 import com.ccarlos.usercenter.domain.dto.messaging.UserAddBonusMsgDTO;
+import com.ccarlos.usercenter.domain.dto.user.UserLoginDTO;
 import com.ccarlos.usercenter.domain.entity.bonus.BonusEventLog;
 import com.ccarlos.usercenter.domain.entity.user.User;
 import lombok.RequiredArgsConstructor;
@@ -46,5 +47,29 @@ public class UserService {
                         .build()
         );
         log.info("积分添加完毕...");
+    }
+
+    public User login(UserLoginDTO loginDTO, String openId) {
+        User user = this.userMapper.selectOne(
+                User.builder()
+                        .wxId(openId)
+                        .build()
+        );
+        if (user == null) {
+            User userToSave = User.builder()
+                    .wxId(openId)
+                    .bonus(300)
+                    .wxNickname(loginDTO.getWxNickname())
+                    .avatarUrl(loginDTO.getAvatarUrl())
+                    .roles("user")
+                    .createTime(new Date())
+                    .updateTime(new Date())
+                    .build();
+            this.userMapper.insertSelective(
+                    userToSave
+            );
+            return userToSave;
+        }
+        return user;
     }
 }
