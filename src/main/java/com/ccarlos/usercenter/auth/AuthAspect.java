@@ -31,7 +31,7 @@ public class AuthAspect {
 
     private void checkToken() {
         try {
-            // 1. 从header里面获取token
+            // 1. 从header里面获取token 测试
             HttpServletRequest request = getHttpServletRequest();
 
             String token = request.getHeader("X-Token");
